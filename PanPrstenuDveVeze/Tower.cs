@@ -59,7 +59,7 @@ namespace PanPrstenuDveVeze
 
         private float currentRange;
 
-        private float timeToDestoyStone = 50f;//0.3f;//0.3f;
+        private float timeToDestoyStone = 50f;
         private float destroyCooldown = 0;
 
         private static Pen towerPen = new Pen(Color.Black, 3);

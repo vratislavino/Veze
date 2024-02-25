@@ -19,7 +19,7 @@ namespace PanPrstenuDveVeze
         public static Form1 Instance { get { return instance; } }
 
         public Buff Instakill { get { return instakill; } }
-        public Buff Immortality { get { return immortality; } }
+        public Buff Immortality { get { return instakill; } }
 
         public int Score {
             get { return score; }

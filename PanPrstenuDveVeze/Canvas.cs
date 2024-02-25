@@ -38,11 +38,12 @@ namespace PanPrstenuDveVeze
             this.DoubleBuffered = true;
             PlaceNewTower();
             PlaceNewTower();
+            PlaceNewTower();
+            PlaceNewTower();
             instance = this;
 
             Tower q = new Tower();
             q = null;
-            //-------
         }
 
         public void ObjectsUpdate(float interval) {
@@ -50,7 +51,6 @@ namespace PanPrstenuDveVeze
             for (int i = 0; i < stones.Count; i++) {
                 stones[i].Move();
             }
-            //stones.ForEach(x => x.Move());
             towers.ForEach(x => x.UpdateCooldown(interval));
 
             CheckCollisions();
@@ -85,7 +85,6 @@ namespace PanPrstenuDveVeze
 
         public void AddStone(Stone stone) {
             stones.Add(stone);
-            //Console.WriteLine(stones.Count);
             drawables.Add(stone);
             Refresh();
         }
@@ -154,7 +153,6 @@ namespace PanPrstenuDveVeze
                     return tower;
                 }
             }
-            return null;
         }
 
         private void Canvas_MouseUp(object sender, MouseEventArgs e) {
