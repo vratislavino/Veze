@@ -10,12 +10,7 @@ using System.Windows.Forms;
 
 namespace PanPrstenuDveVeze
 {
-    /*
-     TODO:
-        Používání buffů
-        ----
-     */
-
+    // well well well... nějak se to rozbilo :(
 
     public partial class Canvas : UserControl {
         public event Action<int> TowerDestroyedStone;
@@ -23,7 +18,6 @@ namespace PanPrstenuDveVeze
         List<IDrawable> drawables = new List<IDrawable>();
 
         List<Tower> towers = new List<Tower>();
-        List<Spawner> spawners = new List<Spawner>();
         List<Stone> stones = new List<Stone>();
 
         Tower movingTower = null;
@@ -63,23 +57,23 @@ namespace PanPrstenuDveVeze
             foreach (var tower in towers) {
                 foreach (var stone in stones) {
                     if (tower.IsStoneInRange(stone)) {
-                        if (!tower.IsDestroyingStone) {
-                            tower.DestroyStone(stone);
-                        }
-                    }
-                    if (tower.CheckTowerHit(stone)) {
-                        tower.Hit(stone);
-                    }
-                }
-            }
+        //                if (!tower.IsDestroyingStone) {
+        //                    tower.DestroyStone(stone);
+        //                }
+        //            }
+        //            if (tower.CheckTowerHit(stone)) {
+        //                tower.Hit(stone);
+        //            }
+        //        }
+        //    }
 
-            for (int i = 0; i < towers.Count; i++) {
-                towers[i].ClearDestroyedTower();
-            }
-            towers.ForEach(x => x.CommitDie());
-        }
+        //    for (int i = 0; i < towers.Count; i++) {
+        //        towers[i].ClearDestroyedTower();
+        //    }
+        //    towers.ForEach(x => x.CommitDie());
+        //}
 
-        public void AddSpawner(Spawner spawner) {
+        //public void AddSpawner(Spawner spawner) {
             spawners.Add(spawner);
         }
 
@@ -103,7 +97,7 @@ namespace PanPrstenuDveVeze
                         break;
                     }
                 }
-
+                vůbec nevim, co by mohlo být špatně
                 if (isFarEnough) {
                     t.Position = new Point(x, y);
                     towers.Add(t);
@@ -166,3 +160,5 @@ namespace PanPrstenuDveVeze
         }
     }
 }
+
+            celý to svítí červeně :(
